@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./controller/index.js ./wallets.txt ../modules/index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,5 @@
     "axios": "^1.6.2",
     "ethers": "^5.7.2",
     "moment": "^2.29.4"
-  },
-  "type": "module"
+  }
 }
