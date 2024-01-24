@@ -11,8 +11,8 @@ const ADPT_PARAMS = '0x000100000000000000000000000000000000000000000000000000000
 module.exports = async function angle(pkey) {
   const signer = new ethers.Wallet(pkey, CELO_PROVIDER);
   const ageurBalance = await getTokenBalance(signer.address, AGEUR_CTR, CELO_PROVIDER);
-  const amount = (ageurBalance * AMOUNT_PERCENT) / 100;
-  if (amount < 0.00000001) {
+  const amount = ageurBalance * (AMOUNT_PERCENT / 100);
+  if (amount < 1 / Math.pow(10, 8)) {
     console.log('Not enough agEUR');
     return;
   }
